@@ -18,7 +18,7 @@ int generateRandomNumber(const int min, const int max)
 {
     // TODO: Return a random integer number between min and max
     int ans=max-min;
-    return rand() %ans + min;
+    return rand()%ans + min;
 }
 
 vector<string> readWordListFromFile(const string& filePath)
@@ -89,7 +89,7 @@ string generateHiddenCharacters(string answerWord){
     string secretWord;
      for (int i =0 ;i <answerWord.length(); i++)
      {
-               secretWord[i]='-';
+               secretWord[i]="-";
      }
     return secretWord;
 }
@@ -128,7 +128,7 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
 void updateEnteredChars(const char ch, string& chars){
     // TODO: append the character ch is in end of the text chars
     chars+=ch;
-    chars+=' ';
+    chars+=" ";
 }
 
 /***
@@ -161,7 +161,7 @@ void processData(const char ch, const string& word,
     /*** TODO
         If ch in word:
             update secretWord: call updateSecretWord() function
-            update correctChars: call uppdateEnteredChars() function
+            update correctChars: call updateEnteredChars() function
         else:
             update incorrectGuess: call updateIncorrectGuess() function
             update incorrectChars: call updateEnteredChars() function
