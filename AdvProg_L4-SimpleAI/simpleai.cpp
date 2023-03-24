@@ -90,9 +90,9 @@ char findMostFrequentChar(const map<char, int>& occurrences, const set<char>& se
     int res=-1e9;
     for (auto it : occurrences)
     {
-        if (selectedChars.find(it.first) != selectedChars.end())
+        if (selectedChars.find(it.first) == selectedChars.end())
         {
-            if (it.second >= res)
+            if (it.second > res)
             {
                 res=it.second;
                 answer=it.first;
@@ -137,7 +137,7 @@ string getWordMask(char nextChar)
 
 bool isCorrectChar(char ch, const string& mask)
 {
-    bool answer;
+    bool answer=false;
     //Write your code here
     for (int i=0;i<mask.size();i++)
     {
@@ -161,7 +161,7 @@ bool isCorrectChar(char ch, const string& mask)
 ***/
 bool isWholeWord(const string& mask)
 {
-     bool answer;
+     bool answer=true;
     //Write your code here
     for (int i=0;i<mask.size();i++)
     {
@@ -169,7 +169,7 @@ bool isWholeWord(const string& mask)
         {
             answer=false;
         }
-        else answer=true;
+       
     }
     return answer;
 }
